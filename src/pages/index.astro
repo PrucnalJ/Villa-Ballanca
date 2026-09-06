@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
 import { site, hours, offerings, menus } from '../data/site';
 
 const title = 'Villa Ballanca | Italian Restaurant & Banquets in Lower Burrell, PA';
@@ -11,15 +12,23 @@ const open = hours.filter((h) => h.open);
 <Base title={title} description={description}>
   <section class="hero" id="top">
     <div class="wrap hero__in">
-      <p class="eyebrow">Leechburg Road, Lower Burrell</p>
-      <h1>Italian, and <em>a room for the whole family.</em></h1>
-      <p>
-        A dining room, a catering menu, and private banquet rooms &mdash; all out of the same
-        kitchen on Leechburg Road. Open Wednesday through Sunday.
-      </p>
-      <div class="hero__cta">
-        <a class="btn btn--terra" href={site.phoneHref}>Call {site.phone}</a>
-        <a class="btn btn--ghost" href="#banquets">Reserve a banquet room</a>
+      <div>
+        <p class="eyebrow">Leechburg Road, Lower Burrell</p>
+        <h1>Italian, and <em>a room for the whole family.</em></h1>
+        <p>
+          A dining room, a catering menu, and private banquet rooms &mdash; all out of the
+          same kitchen on Leechburg Road. Open Wednesday through Sunday.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--terra" href={site.phoneHref}>Call {site.phone}</a>
+          <a class="btn btn--ghost" href="#banquets">Reserve a banquet room</a>
+        </div>
+      </div>
+      <div class="hero__plates" aria-hidden="false">
+        <img class="hero__plate hero__plate--a" src={url('/images/dish-seafood.webp')}
+             alt="A seafood pasta with shrimp, mussels, clams and scallops" width="760" height="728" fetchpriority="high" />
+        <img class="hero__plate hero__plate--b" src={url('/images/dish-mussels.webp')}
+             alt="Mussels served with tomato" width="760" height="728" loading="lazy" />
       </div>
     </div>
   </section>
