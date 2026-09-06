@@ -1,0 +1,39 @@
+---
+import { site, hours } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <h4>Villa Ballanca</h4>
+        <p>{site.tagline}.</p>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <p>
+          <a href={site.mapsUrl} target="_blank" rel="noopener">
+            {site.address.street}<br />
+            {site.address.city}, {site.address.state} {site.address.zip}
+          </a>
+        </p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href={site.phoneHref}>{site.phone}</a></p>
+        <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        {hours.map((h) => (
+          <p style="margin:0">{h.day} &nbsp;{h.open ? `${h.open} – ${h.close}` : h.note}</p>
+        ))}
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; {year} Villa Ballanca. All rights reserved.</span>
+      <span>Lower Burrell, Pennsylvania</span>
+    </div>
+  </div>
+</footer>

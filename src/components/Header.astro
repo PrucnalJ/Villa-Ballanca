@@ -1,0 +1,29 @@
+---
+import { site } from '../data/site';
+---
+
+<div class="topbar">
+  <div class="wrap topbar__in">
+    <span>{site.address.street}, {site.address.city}, {site.address.state} {site.address.zip}</span>
+    <span>Wed&ndash;Sat 11&ndash;9 &middot; Sun 11&ndash;8.30 &middot; Closed Mon &amp; Tue</span>
+    <a href={site.phoneHref}>{site.phone}</a>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a class="brand" href="#top">
+      <span class="brand__name">Villa Ballanca</span>
+      <span class="brand__sub">Italian &middot; Lower Burrell, Pennsylvania</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <span class="nav__links">
+        <a href="#what">The restaurant</a>
+        <a href="#menus">Menus</a>
+        <a href="#banquets">Banquets</a>
+        <a href="#visit">Visit</a>
+      </span>
+      <a class="btn btn--terra" href={site.phoneHref}>Call to order</a>
+    </nav>
+  </div>
+</header>

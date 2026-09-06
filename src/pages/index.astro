@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, hours, offerings, menus } from '../data/site';
+
+const title = 'Villa Ballanca | Italian Restaurant & Banquets in Lower Burrell, PA';
+const description =
+  'Italian restaurant, catering and private banquet rooms on Leechburg Road in Lower Burrell, PA. Open Wednesday to Sunday. Call (724) 339-6111.';
+const open = hours.filter((h) => h.open);
+---
+
+<Base title={title} description={description}>
+  <section class="hero" id="top">
+    <div class="wrap hero__in">
+      <p class="eyebrow">Leechburg Road, Lower Burrell</p>
+      <h1>Italian, and <em>a room for the whole family.</em></h1>
+      <p>
+        A dining room, a catering menu, and private banquet rooms &mdash; all out of the same
+        kitchen on Leechburg Road. Open Wednesday through Sunday.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--terra" href={site.phoneHref}>Call {site.phone}</a>
+        <a class="btn btn--ghost" href="#banquets">Reserve a banquet room</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hoursband">
+    <div class="wrap hoursband__in">
+      <div class="hoursband__days">
+        {open.map((h) => (
+          <span class="hoursband__day">{h.day} &nbsp;{h.open}&ndash;{h.close}</span>
+        ))}
+      </div>
+      <p class="hoursband__note">Closed Monday and Tuesday.</p>
+    </div>
+  </section>
+
+  <section class="section" id="what">
+    <div class="wrap">
+      <p class="eyebrow">Three things, one kitchen</p>
+      <h2>Dine in, take it with you, or fill a room.</h2>
+      <p class="lede">
+        Most people find us one way and then discover the other two. It is the same food
+        either way.
+      </p>
+      <div class="grid" style="margin-top:2.4rem">
+        {offerings.map((o) => (
+          <div class="card">
+            <h3>{o.name}</h3>
+            <p class="card__detail">{o.detail}</p>
+            <p>{o.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--cream" id="menus">
+    <div class="wrap">
+      <p class="eyebrow">Menus</p>
+      <h2>Two menus, depending on where you are eating.</h2>
+      <div class="menus">
+        {menus.map((m) => (
+          <div class="menu-item">
+            <h3>{m.name}</h3>
+            <p>{m.note}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:1.8rem;font-size:.93rem;color:var(--ink-faint)">
+        On a finished site each of these would be a page you can read on a phone, and one
+        Google can index &mdash; so somebody searching for Italian food in Lower Burrell
+        actually finds a dish rather than a menu link.
+      </p>
+      <p style="margin-top:1.6rem">
+        <a class="btn btn--outline" href={site.phoneHref}>Call to order</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--wine" id="banquets">
+    <div class="wrap">
+      <p class="eyebrow">Banquets</p>
+      <h2>A private room, without hiring a hall.</h2>
+      <p class="lede" style="color:#e8cfd2">
+        Family gatherings, birthdays, christenings, corporate functions. The rooms are here
+        in the building, so the food comes out of the same kitchen and nobody is trucking
+        trays across town. Tell us the date and the headcount and we will take it from there.
+      </p>
+      <p style="margin-top:1.9rem">
+        <a class="btn btn--terra" href={site.phoneHref}>Call {site.phone}</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="visit">
+    <div class="wrap">
+      <p class="eyebrow">Visit</p>
+      <h2>2740 Leechburg Road.</h2>
+      <div class="visit">
+        <div class="panel">
+          <h3>Hours</h3>
+          <table class="hours">
+            <tbody>
+              {hours.map((h) => (
+                <tr>
+                  <th scope="row">{h.day}</th>
+                  <td class={h.open ? '' : 'closed'}>{h.open ? `${h.open} – ${h.close}` : h.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <h3>Get in touch</h3>
+          <dl class="detail">
+            <div>
+              <dt>Call</dt>
+              <dd><a href={site.phoneHref}>{site.phone}</a></dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+            </div>
+            <div>
+              <dt>Find us</dt>
+              <dd>
+                <a href={site.mapsUrl} target="_blank" rel="noopener">
+                  {site.address.street}<br />
+                  {site.address.city}, {site.address.state} {site.address.zip}
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="panel">
+          <h3>Planning an event?</h3>
+          <p style="font-size:.96rem">
+            Banquet rooms and catering both start with a phone call. The earlier you ring,
+            the more of the calendar is still open &mdash; particularly around the holidays.
+          </p>
+          <p style="margin-top:1.3rem">
+            <a class="btn btn--wine" href={site.phoneHref}>Call {site.phone}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

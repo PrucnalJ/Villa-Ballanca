@@ -1,0 +1,138 @@
+/* Villa Ballanca. A GoDaddy template with no brand colour of its own, so the
+   palette is chosen: oxblood, olive and warm cream — a trattoria rather than the
+   black-and-gold of a supper club. No webfonts, no framework, no client-side JS. */
+
+:root {
+  --wine: #6b2230;
+  --wine-dark: #4c1622;
+  --olive: #6d7146;
+  --terracotta: #c2703f;
+
+  --cream: #fdf9f3;
+  --cream-deep: #f5ece0;
+  --line: #e6d9c7;
+
+  --ink: #2a2320;
+  --ink-soft: #5b5047;
+  --ink-faint: #8d8175;
+  --white: #fff;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --wrap: 1080px;
+  --radius: 3px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+body { margin: 0; font-family: var(--sans); font-size: 17px; line-height: 1.68; color: var(--ink-soft); background: var(--cream); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); line-height: 1.14; margin: 0 0 .5em; font-weight: 600; letter-spacing: -0.012em; }
+h1 { font-size: clamp(2.3rem, 5.6vw, 3.9rem); }
+h2 { font-size: clamp(1.7rem, 3.7vw, 2.55rem); }
+h3 { font-size: 1.2rem; }
+p { margin: 0 0 1.15em; }
+a { color: var(--wine); }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
+.section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+.section--cream { background: var(--cream-deep); }
+.section--wine { background: var(--wine); color: #e8cfd2; }
+.section--wine h2, .section--wine h3 { color: var(--cream); }
+
+.eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--terracotta); margin: 0 0 .9rem; }
+.lede { font-size: 1.12rem; max-width: 60ch; }
+
+.btn { display: inline-block; padding: .88rem 1.75rem; border-radius: var(--radius); font-weight: 600; font-size: .94rem; letter-spacing: .02em; text-decoration: none; border: 2px solid transparent; transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
+.btn--wine { background: var(--wine); color: var(--white); }
+.btn--wine:hover { background: var(--wine-dark); }
+.btn--terra { background: var(--terracotta); color: #33170a; }
+.btn--terra:hover { background: #ad6034; }
+.btn--ghost { border-color: rgba(255,255,255,.62); color: var(--white); }
+.btn--ghost:hover { background: rgba(255,255,255,.14); border-color: #fff; }
+.btn--outline { border-color: var(--wine); color: var(--wine); }
+.btn--outline:hover { background: var(--wine); color: var(--white); }
+:where(a, button, input, textarea, select):focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; }
+.skip { position: absolute; left: -9999px; background: var(--wine); color: #fff; padding: .7rem 1.1rem; z-index: 100; }
+.skip:focus { left: .6rem; top: .6rem; }
+
+/* Header */
+.topbar { background: var(--wine-dark); color: #dcc0c4; font-size: .82rem; padding: .45rem 0; }
+.topbar__in { display: flex; flex-wrap: wrap; gap: .3rem 1.5rem; align-items: center; justify-content: center; }
+.topbar a { color: #fff; font-weight: 700; text-decoration: none; }
+.topbar a:hover { text-decoration: underline; }
+
+.header { position: sticky; top: 0; z-index: 50; background: var(--cream); border-bottom: 2px solid var(--wine); }
+.header__in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem 0; }
+.brand { display: block; text-decoration: none; line-height: 1.05; }
+.brand__name { font-family: var(--serif); font-size: 1.5rem; color: var(--wine); letter-spacing: .01em; }
+.brand__sub { display: block; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-faint); margin-top: .25rem; }
+.nav { display: flex; align-items: center; gap: 1.5rem; }
+.nav__links { display: flex; align-items: center; gap: 1.5rem; }
+.nav a { color: var(--ink-soft); text-decoration: none; font-size: .93rem; font-weight: 500; white-space: nowrap; }
+.nav a:hover { color: var(--wine); }
+/* `.nav a` outranks a bare `.btn--*` class; buttons in the nav win their colour back. */
+.nav a.btn--wine { color: var(--white); }
+.nav a.btn--terra { color: #33170a; }
+@media (max-width: 860px) { .nav__links { display: none; } }
+
+/* Hero */
+.hero { position: relative; background: var(--wine); color: var(--white); overflow: hidden; }
+.hero::after {
+  content: ""; position: absolute; left: -12%; bottom: -50%;
+  width: 40rem; height: 40rem; border-radius: 50%;
+  background: radial-gradient(circle, rgba(194,112,63,.28) 0%, rgba(107,34,48,0) 70%);
+}
+.hero__in { position: relative; padding: clamp(4.5rem, 12vw, 8rem) 0; max-width: 40rem; }
+.hero h1 { color: var(--white); text-wrap: balance; }
+.hero h1 em { font-style: italic; color: #eab694; }
+.hero p { color: #edd8da; font-size: 1.14rem; max-width: 33rem; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.1rem; }
+.hero .eyebrow { color: #eab694; }
+
+/* Hours band — they are closed two days a week and it should be unmissable. */
+.hoursband { background: var(--cream-deep); border-bottom: 1px solid var(--line); }
+.hoursband__in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.4rem 0; }
+.hoursband__days { display: flex; flex-wrap: wrap; gap: .6rem; }
+.hoursband__day { background: var(--white); border: 1px solid var(--line); border-radius: 100px; padding: .42rem 1.05rem; font-weight: 600; color: var(--wine); font-size: .93rem; }
+.hoursband__note { font-size: .94rem; color: var(--ink-soft); margin: 0; }
+
+/* Blocks */
+.grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.card { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--terracotta); border-radius: var(--radius); padding: 1.7rem 1.6rem; }
+.card h3 { margin-bottom: .2rem; }
+.card__detail { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--terracotta); margin-bottom: .8rem; }
+.card p { margin: 0; font-size: .95rem; color: var(--ink-faint); }
+
+.menus { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; border-top: 1px solid var(--line); margin-top: 2rem; }
+.menu-item { padding: 1.3rem 1.3rem; border-bottom: 1px solid var(--line); }
+.menu-item h3 { font-size: 1.08rem; margin-bottom: .15rem; }
+.menu-item p { margin: 0; font-size: .9rem; color: var(--ink-faint); }
+
+.visit { display: grid; grid-template-columns: repeat(auto-fit, minmax(275px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.panel { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.8rem; }
+.panel h3 { margin-bottom: .9rem; }
+.hours { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.hours th, .hours td { text-align: left; padding: .46rem 0; border-bottom: 1px solid var(--line); font-weight: 400; }
+.hours td { text-align: right; color: var(--ink); }
+.hours tr:last-child th, .hours tr:last-child td { border-bottom: 0; }
+.hours .closed { color: var(--ink-faint); }
+.detail { margin: 0; display: grid; gap: 1rem; }
+.detail dt { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); }
+.detail dd { margin: .12rem 0 0; font-size: 1.01rem; color: var(--ink); }
+.detail a { text-decoration: none; font-weight: 700; }
+.detail a:hover { text-decoration: underline; }
+
+/* Footer */
+.footer { background: var(--wine-dark); color: #c8a5aa; padding: 3rem 0 2rem; font-size: .92rem; }
+.footer h4 { font-family: var(--sans); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: #eab694; margin: 0 0 .85rem; }
+.footer a { color: #f2dfe1; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.footer__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 2rem; }
+.footer__bottom { border-top: 1px solid #6a2b38; margin-top: 2.4rem; padding-top: 1.3rem; font-size: .84rem; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; }
