@@ -25,11 +25,16 @@ neglected one.
 - **Neither menu is on the site as text.** "Our Menu" and "Catering To-Go Menu" are links.
   Nobody searching for a dish in Lower Burrell can find them, and nobody can read a menu
   comfortably on a phone.
-- **There are no photographs of their food, their dining room or their banquet rooms.**
-  For a restaurant this is the single most valuable thing to fix, ahead of everything else.
+- **Two of their own dish photographs are on the preview** — the seafood pasta and the
+  mussels, taken from their current site. They were published as circular cut-outs with grey
+  masking artefacts around them; the preview crops to the artwork and uses the circles
+  deliberately, as plates. They are good photographs badly presented.
+- **What is still missing is the dining room and the banquet rooms.** There is not one
+  photograph of either anywhere on their site, and the banquet rooms are the thing people
+  book sight-unseen. That is the most valuable thing left to fix.
 
-The preview does not invent either. It lists the two menus and describes the three sides of
-the business, and leaves the actual dishes to them.
+The preview does not invent any menu content. It lists the two menus and describes the three
+sides of the business, and leaves the actual dishes to them.
 
 ## Small things to confirm
 
