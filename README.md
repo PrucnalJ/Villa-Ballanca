@@ -3,7 +3,7 @@
 A speculative rebuild of the homepage for Villa Ballanca (Lower Burrell, PA), built by
 Prucnal & Sachdev. Not commissioned.
 
-- **Preview:** https://prucnalj.github.io/Villa-Ballanca/ (built `noindex`)
+- **Preview:** https://prucnal-sachdev.github.io/Villa-Ballanca/ (built `noindex`)
 - **Their current site:** https://www.villaballanca.com
 - **Open questions:** [CONTENT-NEEDED.md](CONTENT-NEEDED.md)
 
@@ -30,6 +30,6 @@ than any layout work.
 Astro, static output, no client framework, no webfonts, no JavaScript on the page.
 
 ```bash
-MSYS_NO_PATHCONV=1 SITE_URL=https://prucnalj.github.io BASE_PATH=/Villa-Ballanca \
+MSYS_NO_PATHCONV=1 SITE_URL=https://prucnal-sachdev.github.io BASE_PATH=/Villa-Ballanca \
   PUBLIC_NOINDEX=1 npm run build
 ```

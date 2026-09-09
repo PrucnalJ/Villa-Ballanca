@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 // Production values. The GitHub Pages preview workflow (.github/workflows/pages.yml)
-// overrides both so the site can be served from https://prucnalj.github.io/Villa-Ballanca/.
+// overrides both so the site can be served from https://prucnal-sachdev.github.io/Villa-Ballanca/.
 const site = process.env.SITE_URL ?? 'https://villaballanca.com';
 const base = process.env.BASE_PATH ?? '/';
 
